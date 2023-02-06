@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,13 +9,27 @@
         integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/header.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
     <script src="/js/addRecipe.js" defer></script>
     <link rel="icon" href="img/cooking-pot.png">
     <title>Co na obiad? - Przepisy</title>
 </head>
 
-<body>
-    <div>
+<body class="body">
+    <header class="header">
+        <h1 class="header__title">
+            Co na Obiad?
+        </h1>
+        <div class="header__dropdown">
+            <button class="header__dropbtn">
+                Dropdown
+            </button>
+        </div>
+    </header>
+    <picture src="/img/cooking-pot.png" class="logo">
+    </picture>
+    <div class="mainForm">
         <div>
             <form class="jsRecipeForm">
                 <input placeholder="Jak danie się nazywa?" name="title" class="jsRecipeForm__title" />
