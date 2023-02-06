@@ -8,14 +8,7 @@ html {
 
 .body {
     background-color: cornsilk;
+    margin: 0px;
 }
 
-.logo {
-    background-color: aliceblue;
-    margin-left: 15px;
-    border: 0.125cm solid black;
-    padding: 10%;
-    border-radius: 150%;
-    width: 50%;
-    height: 50%;
-}
+

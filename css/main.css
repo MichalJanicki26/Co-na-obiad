@@ -1,12 +1,13 @@
 .main {
     display: flex;
     justify-content: center;
+    margin: 15%;
 }
 
 .main__btn {
-    margin-top: 15%;
+
 }
 
-.mainForm {
-    margin-top: 15%;
+.main__form {
+
 }

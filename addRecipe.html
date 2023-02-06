@@ -18,19 +18,26 @@
 
 <body class="body">
     <header class="header">
+        <div >
+            <img src="/img/cooking-pot.png" class="header__logo">
+        </img>
+        </div>
         <h1 class="header__title">
             Co na Obiad?
         </h1>
         <div class="header__dropdown">
-            <button class="header__dropbtn">
-                Dropdown
-            </button>
+            <p class="header__dropbtn">
+                Menu
+            </p>
+            <div class="header__dropdown-content" style="right:0;">
+                <p href="...">Strona Główna</p>
+                <p href="...">Dodaj Przepis</p>
+                <p href="...">Coś konkretnego?</p>
+            </div>
         </div>
     </header>
-    <picture src="/img/cooking-pot.png" class="logo">
-    </picture>
-    <div class="mainForm">
-        <div>
+    <main class="main">
+        <div class="main__form">
             <form class="jsRecipeForm">
                 <input placeholder="Jak danie się nazywa?" name="title" class="jsRecipeForm__title" />
                 <input placeholder="Z czego to zrobimy?" name="ingredient" class="jsRecipeForm__ingirdient" />
@@ -47,7 +54,7 @@
             <div class="jsIngredientList"></div>
             <div class="jsInstructions"></div>
         </div>
-    </div>
+    </main>
 </body>
 
 </html>
