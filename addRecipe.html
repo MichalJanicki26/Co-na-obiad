@@ -9,18 +9,19 @@
         integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="/js/addRecipe.js" defer></script>
-    <title>Co jemy? - Przepisy</title>
+    <title>Co na obiad? - Przepisy</title>
 </head>
 
 <body>
     <div>
         <div>
             <form class="jsRecipeForm">
-                <input placeholder="Jak się nazywa danie?" name="title" class="jsRecipeForm__title" />
+                <input placeholder="Jak danie się nazywa?" name="title" class="jsRecipeForm__title" />
                 <input placeholder="Z czego to zrobimy?" name="ingredient" class="jsRecipeForm__ingirdient" />
                 <input placeholder="Ile tego potrzebujemy?" name="ingredientAmount"
                     class="jsRecipeForm__ingredientAmount" />
                 <button class="jsRecipeForm__addIngredientAmount">+</button>
+                <p>Jak je przygotujemy?</p>
                 <textarea name="howItsDone" class="jsRecipeForm__howItsDone"></textarea>
                 <button class="jsRecipeForm__addHowItsDone">+</button>
                 <input type="submit" value="Smacznego!" />
