@@ -1,16 +1,28 @@
 {
     const jsRecipeForm = document.querySelector(".jsRecipeForm");
-    const title = document.querySelector(".jsRecipeForm__title");
-    const ingredient = document.querySelector(".jsRecipeForm__ingirdient");
+    const newTitle = document.querySelector(".jsRecipeForm__title");
+    const ingredient = document.querySelector(".jsRecipeForm__ingredient");
     const ingredientAmount = document.querySelector(".jsRecipeForm__ingredientAmount");
-    const addIngredientAmount = document.querySelector(".jsRecipeForm__addIngredientAmount");
+    const addIngredientAmount = document.querySelector(".jsRecipeForm__addIngredient");
     const howItsDone = document.querySelector(".jsRecipeForm__howItsDone");
     const addHowItsDone = document.querySelector(".jsRecipeForm__addHowItsDone");
     const ingredientsContainer = document.querySelector(".jsIngredientList");
     const instructionsContainer = document.querySelector(".jsInstructions");
 
+    const title = []
     const ingredientsList = [];
     const instructions = [];
+
+    const addTitle = () => {
+        const newTitleValue = newTitle.value.trim();
+
+        if (!newTitleValue) {
+            console.log("podaj tytuł");
+            return;
+        }
+
+        title.push(newTitle);
+    }
 
     const createIngredient = (ingredient, amount) => ({
         ingredient, amount
@@ -68,7 +80,7 @@
     });
 
     const submitHandler = () => {
-        const recipe = createRecipe(title.value, ingredientsList, instructions);
+        const recipe = createRecipe(title, ingredientsList, instructions);
         console.log(JSON.stringify(recipe));
     }
 

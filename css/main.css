@@ -9,5 +9,11 @@
 }
 
 .main__form {
+    display: grid;
 
 }
+
+.main__form-title {
+
+}
+

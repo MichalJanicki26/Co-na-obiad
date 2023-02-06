@@ -30,23 +30,24 @@
                 Menu
             </p>
             <div class="header__dropdown-content" style="right:0;">
-                <p href="...">Strona Główna</p>
-                <p href="...">Dodaj Przepis</p>
+                <p href="/index.html">Strona Główna</p>
+                <p href="/addRecipe.html">Dodaj Przepis</p>
                 <p href="...">Coś konkretnego?</p>
             </div>
         </div>
     </header>
     <main class="main">
-        <div class="main__form">
-            <form class="jsRecipeForm">
-                <input placeholder="Jak danie się nazywa?" name="title" class="jsRecipeForm__title" />
-                <input placeholder="Z czego to zrobimy?" name="ingredient" class="jsRecipeForm__ingirdient" />
+        <div>
+            <form class="jsRecipeForm main__form">
+                <input placeholder="Jak danie się nazywa?" name="title" class="jsRecipeForm__title main__form-title" />
+                <button class="jsRecipeForm__title-add main__form-title">+</button>
+                <input placeholder="Z czego to zrobimy?" name="ingredient" class="jsRecipeForm__ingredient main__form-ingredient" />
                 <input placeholder="Ile tego potrzebujemy?" name="ingredientAmount"
-                    class="jsRecipeForm__ingredientAmount" />
-                <button class="jsRecipeForm__addIngredientAmount">+</button>
+                    class="jsRecipeForm__ingredientAmount main__form-ingredientAmount"/>
+                <button class="jsRecipeForm__addIngredient main__form-addIngredient">+</button>
                 <p>Jak je przygotujemy?</p>
-                <textarea name="howItsDone" class="jsRecipeForm__howItsDone"></textarea>
-                <button class="jsRecipeForm__addHowItsDone">+</button>
+                <textarea name="howItsDone" class="jsRecipeForm__howItsDone main__form-howItsDone"></textarea>
+                <button class="jsRecipeForm__addHowItsDone main__form-addHowItsDone">+</button>
                 <input type="submit" value="Smacznego!" />
             </form>
         </div>
