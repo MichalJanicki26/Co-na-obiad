@@ -5,7 +5,21 @@
 }
 
 .main__btn {
+    font-family: Century Gothic;
+    font-weight: 700;
+    color: white;
+    background-color: peru;
+    border: none;
+    border-radius: 3em;
+    padding: 5%;
+}
 
+.main__btn:hover {
+    background-color: orange;
+}
+
+.main__btn:active {
+    background-color: chocolate;
 }
 
 .main__form {

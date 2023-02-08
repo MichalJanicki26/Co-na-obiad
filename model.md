@@ -2,24 +2,20 @@
 
 sequenceDiagram
 
-participant u as użytkownik strony
-participant f as formularz
+participant u as user
+participant f as form
 participant l as local storage
 
-u ->> f: nazwa, lista składników, instrukcje
-note over f: walidacja
+u ->> f: title, ingredients list, instructions
+note over f: validation
 
-alt jeżeli przepis ok
-f ->> l: zapisuje
-f ->> u: komunikat o dodaniu
-f ->> u: wyczyszczenie formularza
-else jeżeli przepis nie ok
-note over f: komunikat o błędzie
+alt if recipe is correct
+f ->> l: save
+f ->> u: sucess message
+f ->> u: clear form
+else if recipe is not correct
+note over f: error message
 
 end
 ```
 
-co do zrobienia:
-- walidacja title
-- css
-- dodawanie instrukcji i wyświetlanie
