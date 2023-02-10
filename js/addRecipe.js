@@ -1,27 +1,40 @@
 {
-    const jsRecipeForm = document.querySelector(".jsRecipeForm");
-    const newTitle = document.querySelector(".jsRecipeForm__title");
-    const ingredient = document.querySelector(".jsRecipeForm__ingredient");
-    const ingredientAmount = document.querySelector(".jsRecipeForm__ingredientAmount");
-    const addIngredientAmount = document.querySelector(".jsRecipeForm__addIngredient");
-    const howItsDone = document.querySelector(".jsRecipeForm__howItsDone");
-    const addHowItsDone = document.querySelector(".jsRecipeForm__addHowItsDone");
-    const ingredientsContainer = document.querySelector(".jsIngredientList");
-    const instructionsContainer = document.querySelector(".jsInstructions");
+    const form = document.querySelector(".jsForm");
+    const title = document.querySelector(".jsForm__title");
+    const addTitleBtn = document.querySelector(".jsForm__addTitleBtn");
+    const ingredient = document.querySelector(".jsForm__ingredient");
+    const ingredientAmount = document.querySelector(".jsForm__ingredientAmount");
+    const addIngredientAmountBtn = document.querySelector(".jsForm__addIngredientBtn");
+    const instruction = document.querySelector(".jsForm__instruction");
+    const addInstructionBtn = document.querySelector(".jsForm__addInstructionBtn");
+    const newTitleContainer = document.querySelector(".jsRecipe__title");
+    const ingredientsListContainer = document.querySelector(".jsRecipe__ingredientList");
+    const instructionsContainer = document.querySelector(".jsRecipe__instructions");
 
-    const title = []
+    const newTitle = [];
     const ingredientsList = [];
-    const instructions = [];
+    const newInstructions = [];
 
-    const addTitle = () => {
-        const newTitleValue = newTitle.value.trim();
+    const createNewTitle = (name) => ({
+        name
+    })
+
+    const addNewTitle = () => {
+        const newTitleValue = title.value.trim();
+        const newName = createNewTitle(newTitleValue);
 
         if (!newTitleValue) {
             console.log("podaj tytuł");
             return;
         }
 
-        title.push(newTitle);
+        newTitle.push(newName);
+        const titleHtml = newTitle.map((name) => {
+            return `${name.name}`
+        });
+        const titleString = titleHtml.join("");
+        newTitleContainer.innerHtml = `<h1>${titleString}</h1>`;
+        newTitle.value = "";
     }
 
     const createIngredient = (ingredient, amount) => ({
@@ -48,43 +61,45 @@
             return `<li>${ingredient.ingredient} (${ingredient.amount})</li>`;
         });
         const ingredientsString = ingredientsHtml.join("");
-        ingredientsContainer.innerHTML = `<ul>${ingredientsString}</ul>`;
+        ingredientsListContainer.innerHTML = `<ul>${ingredientsString}</ul>`;
         ingredient.value = "";
         ingredientAmount.value = "";
-        console.log(ingredientsList);
     }
 
     const addInstruction = () => {
-        const howItsDoneValue = howItsDone.value.trim();
+        const instructionsValue = instruction.value.trim();
 
-        if (!howItsDoneValue) {
+        if (!instructionsValue) {
             console.log("podaj instrukcję");
             return;
         }
 
-        instructions.push(howItsDoneValue);
-        howItsDone.value = "";
-        console.log(instructions);
+        newInstructions.push(instructionsValue);
+        newInstructions.value = "";
     }
 
-    const createRecipe = (title, ingredientsList, instructions) => ({
-        title, ingredients: ingredientsList, instructions
+    const createRecipe = (newTitle, ingredientsList, newInstructions) => ({
+        title: newTitle, ingredients: ingredientsList, instructions: newInstructions
     });
 
-    addIngredientAmount.addEventListener("click", () => {
+    addTitleBtn.addEventListener("click", () => {
+        addNewTitle();
+    })
+
+    addIngredientAmountBtn.addEventListener("click", () => {
         addIngredient();
     });
 
-    addHowItsDone.addEventListener("click", () => {
+    addInstructionBtn.addEventListener("click", () => {
         addInstruction();
     });
 
     const submitHandler = () => {
-        const recipe = createRecipe(title, ingredientsList, instructions);
+        const recipe = createRecipe(newTitle, ingredientsList, newInstructions);
         console.log(JSON.stringify(recipe));
     }
 
-    jsRecipeForm.addEventListener("submit", (event) => {
+    form.addEventListener("submit", (event) => {
         event.preventDefault();
         submitHandler();
     });

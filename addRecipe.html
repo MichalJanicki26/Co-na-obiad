@@ -18,17 +18,14 @@
 
 <body class="body">
     <header class="header">
-        <div >
-            <img src="/img/cooking-pot.png" class="header__logo">
-        </img>
+        <div class="header__logo">
+            <img src="/img/1.png" class="header__logo-image"></img>
         </div>
         <h1 class="header__title">
             Co na Obiad?
         </h1>
         <div class="header__dropdown">
-            <p class="header__dropbtn">
-                Menu
-            </p>
+            <img class="header__dropbtn" src="/img/menu.png"></img>
             <div class="header__dropdown-content" style="right:0;">
                 <p href="/index.html">Strona Główna</p>
                 <p href="/addRecipe.html">Dodaj Przepis</p>
@@ -36,24 +33,25 @@
             </div>
         </div>
     </header>
+
     <main class="main">
         <div>
-            <form class="jsRecipeForm main__form">
-                <input placeholder="Jak danie się nazywa?" name="title" class="jsRecipeForm__title main__form-title" />
-                <button class="jsRecipeForm__title-add main__form-title">+</button>
-                <input placeholder="Z czego to zrobimy?" name="ingredient" class="jsRecipeForm__ingredient main__form-ingredient" />
-                <input placeholder="Ile tego potrzebujemy?" name="ingredientAmount"
-                    class="jsRecipeForm__ingredientAmount main__form-ingredientAmount"/>
-                <button class="jsRecipeForm__addIngredient main__form-addIngredient">+</button>
-                <p>Jak je przygotujemy?</p>
-                <textarea name="howItsDone" class="jsRecipeForm__howItsDone main__form-howItsDone"></textarea>
-                <button class="jsRecipeForm__addHowItsDone main__form-addHowItsDone">+</button>
+            <form class="jsForm form">
+                <input placeholder="Jak danie się nazywa?" name="title" class="jsForm__title form__title"/>
+                <button class="jsForm__addTitleBtn form__addTitleBtn">+</button>
+                <input placeholder="Z czego to zrobimy?" name="ingredient" class="jsForm__ingredient form__ingredient"/>
+                <input placeholder="Ile tego potrzebujemy?" name="ingredientAmount" class="jsForm__ingredientAmount form__ingredientAmount"/>
+                <button class="jsForm__addIngredientBtn form__addIngredientBtn">+</button>
+                <p>Jak to przygotujemy?</p>
+                <textarea name="instruction" class="jsForm__instruction form__instruction"></textarea>
+                <button class="jsForm__addInstructionBtn form__instructionBtn">+</button>
                 <input type="submit" value="Smacznego!" />
             </form>
         </div>
-        <div>
-            <div class="jsIngredientList"></div>
-            <div class="jsInstructions"></div>
+        <div class="Recipie">
+            <div class="jsRecipe__title"></div>
+            <div class="jsRecipe__ingredientList"></div>
+            <div class="jsRecipe__instructions"></div>
         </div>
     </main>
 </body>
