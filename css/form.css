@@ -1,0 +1,13 @@
+.form {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    gap: 25px;
+}
+
+.form__header {
+    font-family: Century Gothic;
+    font-weight: 700;
+    font-size: 22pt;
+}
+

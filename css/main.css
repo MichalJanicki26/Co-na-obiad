@@ -1,7 +1,7 @@
 .main {
     display: grid;
-    justify-content: center;
-    margin: 4%;
+    justify-items: center;
+    margin: 25px;
 }
 
 .main__btn {
@@ -11,8 +11,8 @@
     color: #2B0000;
     background-color: peru;
     border: none;
-    border-radius: 20px;
-    padding: 3%;
+    border-radius: 1cm;
+    padding: 25px;
     width: fit-content;
 }
 
@@ -27,14 +27,15 @@
 .main__recipe {
     font-family: Century Gothic;
     font-weight: 700;
-    font-size: 22pt;
+    font-size: 18pt;
     color: cornsilk;
-    background-color: cornsilk;
     border: none;
-    border-radius: 20px;
-    padding: 13%;
+    border-radius: 1cm;
+    padding: 50px;
     justify-self: center;
-    margin-top: 50%;
+    margin-top: 50px;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
 .main__recipeShow{
