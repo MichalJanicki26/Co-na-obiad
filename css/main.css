@@ -17,21 +17,23 @@
 }
 
 .main__btn:hover {
-    background-color: peru;
+    background-color: chocolate;
 }
 
 .main__btn:active {
-    background-color: chocolate;
+    background-color: orange;
 }
 
 .main__recipe {
     font-family: Century Gothic;
     font-weight: 700;
     font-size: 18pt;
-    color: cornsilk;
+    display: none;
+    color: #2B0000;
+    background-color: peru;
     border: none;
     border-radius: 1cm;
-    padding: 50px;
+    padding: 25px;
     justify-self: center;
     margin-top: 50px;
     margin-left: 20%;
@@ -39,6 +41,88 @@
 }
 
 .main__recipeShow{
+    display: grid;
+    justify-items: center;
+    gap: 15px;
+}
+
+.main__recipeGównoBtn {
+    background-color: peru;
+    border: none;
+}
+
+.main__recipeGównoBtn:hover {
+    font-weight: 700;
+}
+
+.main__recipeImgBtn {
+    font-family: Century Gothic;
+    font-size: 18pt;
     color: #2B0000;
     background-color: peru;
+    border: none;
+    border-radius: 1cm;
+    padding: 25px;
+    width: fit-content;
+    margin-top: 25px;
+} ;
+
+.main__recipeImgBtn:hover {
+    font-weight: 700;
+}
+
+.main__recipeNoneBtn {
+    font-family: Century Gothic;
+    font-size: 18pt;
+    color: #2B0000;
+    background-color: peru;
+    border: none;
+    border-radius: 1cm;
+    padding: 25px;
+    width: fit-content;
+    margin-top: 25px;
+} ;
+
+.main__recipeNoneBtn:hover {
+    font-weight: 700;
+}
+
+.main__btnHidden {
+    display: none;
+}
+
+.main__btnShow {
+    display: flex;
+    gap: 25px;
+    justify-items: center;
+}
+
+.main__img {
+    display: none;
+    margin-top: 25px;
+    font-family: Century Gothic;
+    font-weight: 700;
+    font-size: 18pt;
+}
+
+.main__imgShow {
+    display: grid;
+    justify-items: center;
+}
+
+.main__none {
+    display: none;
+    margin-top: 25px;
+    font-family: Century Gothic;
+    font-weight: 700;
+    font-size: 18pt;
+}
+
+.main__noneShow {
+    display: grid;
+    justify-items: center;
+}
+
+.main__img--img {
+    width: 150px;
 }
