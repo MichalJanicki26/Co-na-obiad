@@ -13,11 +13,11 @@
 
     const newTitle = [];
     const ingredientsList = [];
-    const newInstructions = [];
+    const instructionsList = [];
 
     const createNewTitle = (name) => ({
         name
-    })
+    });
 
     const addNewTitle = () => {
         const newTitleValue = title.value.trim();
@@ -30,11 +30,11 @@
 
         newTitle.push(newName);
         const titleHtml = newTitle.map((name) => {
-            return `${name.name}`
+            return `<h1>${name.name}</h1>`;
         });
         const titleString = titleHtml.join("");
-        newTitleContainer.innerHtml = `<h1>${titleString}</h1>`;
-        newTitle.value = "";
+        newTitleContainer.innerHtml = `${titleString}`;
+        title.value = "";
     }
 
     const createIngredient = (ingredient, amount) => ({
@@ -66,16 +66,26 @@
         ingredientAmount.value = "";
     }
 
+    const createInstructions = (instructionType) => ({
+        instructionType
+    });
+
     const addInstruction = () => {
         const instructionsValue = instruction.value.trim();
+        const instructionStep = createInstructions(instructionsValue)
 
         if (!instructionsValue) {
             console.log("podaj instrukcję");
             return;
         }
 
-        newInstructions.push(instructionsValue);
-        newInstructions.value = "";
+        instructionsList.push(instructionStep);
+        const instructionsHtml = instructionsList.map((instructionType) => {
+            return `<li>${instructionType.instructionType}</li>`;
+        });
+        const newInstructionsString = instructionsHtml.join("");
+        instructionsContainer.innerHTML = `<ol>${newInstructionsString}</ol>`;
+        instruction.value = "";
     }
 
     const createRecipe = (newTitle, ingredientsList, newInstructions) => ({
@@ -84,7 +94,7 @@
 
     addTitleBtn.addEventListener("click", () => {
         addNewTitle();
-    })
+    });
 
     addIngredientAmountBtn.addEventListener("click", () => {
         addIngredient();
@@ -95,9 +105,9 @@
     });
 
     const submitHandler = () => {
-        const recipe = createRecipe(newTitle, ingredientsList, newInstructions);
+        const recipe = createRecipe(newTitle, ingredientsList, instructionsList);
         console.log(JSON.stringify(recipe));
-    }
+    };
 
     form.addEventListener("submit", (event) => {
         event.preventDefault();
