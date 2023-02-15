@@ -2,26 +2,31 @@
     background-color: #cd853f;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .header__logo {
-    height: 100px;
+    height: 150px;
     width: 25%;
     justify-content: center;
-    padding: 2%;
 }
 
-.header__logo-image {
+.header__logo-img {
     width: 75%;
 }
 
 .header__title {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
+
+.header__title--text {
+    justify-self: center;
     color: #2B0000;
     font-family: Century Gothic;
     font-weight: 700;
     font-size: 35pt;
-    width: 50%;
 }
 
 .header__dropdown {
@@ -29,25 +34,36 @@
     display: inline-block;
     width: 25%;
     height: 100%;
-    padding-left: 15%;
 }
 
 .header__dropbtn {
-    min-width: 10px;
-    max-width: 50px;
+    display: grid;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+
+.header__dropbtn--img {
+    justify-self: end;
+    height: 75px;
 }
 
 .header__dropdown-content {
     margin: 0% 0% 25% 25%;
+    padding: 3%;
     display: none;
     position: absolute;
     text-align: center;
-    font-size: 14pt;
     min-width: 300px;
     background-color: cornsilk;
-    border: 0.0015cm solid black;
-    padding: 3%;
+    border: 0.0015cm solid peru;
+    border-top: none;
+    border-right: none;
     justify-self: center;
+    color: #2B0000;
+    font-family: Century Gothic;
+    font-weight: 700;
+    font-size: 18pt;
 }
 
 .header__dropdown:hover .header__dropdown-content {
@@ -55,7 +71,6 @@
     background-color: cornsilk;
 }
 
-.header__dropdown:hover .header__dropbtn {
+.header__dropdown:hover .header__dropbtn--img {
     background-color: cornsilk;
-    ;
 }
