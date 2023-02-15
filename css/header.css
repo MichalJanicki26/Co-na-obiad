@@ -6,13 +6,12 @@
 }
 
 .header__logo {
-    height: 150px;
     width: 25%;
     justify-content: center;
 }
 
 .header__logo-img {
-    width: 75%;
+    width: 50%;
 }
 
 .header__title {
@@ -38,14 +37,11 @@
 
 .header__dropbtn {
     display: grid;
-    margin: 0px;
-    padding: 0px;
-    border: 0px;
 }
 
 .header__dropbtn--img {
     justify-self: end;
-    height: 75px;
+    height: 55px;
 }
 
 .header__dropdown-content {

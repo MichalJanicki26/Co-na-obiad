@@ -15,8 +15,8 @@
     const ingredientsList = [];
     const instructionsList = [];
 
-    const createNewTitle = (name) => ({
-        name
+    const createNewTitle = (text) => ({
+        text
     });
 
     const addNewTitle = () => {
@@ -29,12 +29,12 @@
         }
 
         newTitle.push(newName);
-        const titleHtml = newTitle.map((name) => {
-            return `<h1>${name.name}</h1>`;
+        const titleHtml = newTitle.map((text) => {
+            return `${text.text}`;
         });
         const titleString = titleHtml.join("");
-        newTitleContainer.innerHtml = `${titleString}`;
-        title.value = "";
+        newTitleContainer.innerHTML = `${titleString}`;
+        title.value = "Danie";
     }
 
     const createIngredient = (ingredient, amount) => ({
@@ -72,7 +72,7 @@
 
     const addInstruction = () => {
         const instructionsValue = instruction.value.trim();
-        const instructionStep = createInstructions(instructionsValue)
+        const instructionStep = createInstructions(instructionsValue);
 
         if (!instructionsValue) {
             console.log("podaj instrukcję");
@@ -88,8 +88,8 @@
         instruction.value = "";
     }
 
-    const createRecipe = (newTitle, ingredientsList, newInstructions) => ({
-        title: newTitle, ingredients: ingredientsList, instructions: newInstructions
+    const createRecipe = (newTitle, ingredientsList, instructionsList) => ({
+        title: newTitle, ingredients: ingredientsList, instructions: instructionsList
     });
 
     addTitleBtn.addEventListener("click", () => {
