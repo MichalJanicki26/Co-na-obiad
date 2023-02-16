@@ -1,5 +1,6 @@
 {
     const form = document.querySelector(".jsForm");
+    const error = document.querySelector(".jsForm__error");
     const title = document.querySelector(".jsForm__title");
     const ingredient = document.querySelector(".jsForm__ingredient");
     const ingredientAmount = document.querySelector(".jsForm__ingredientAmount");
@@ -29,16 +30,17 @@
         const record = createIngredient(ingredientValue, ingredientAmountValue);
 
         if (!ingredientValue) {
-            console.log("podaj nazwę składnika");
+            error.innerHTML = "podaj nazwę składnika";
             return;
         }
 
         if (!ingredientAmountValue) {
-            console.log("podaj ilość składnika");
+            error.innerHTML = "podaj ilość składnika";
             return;
         }
 
         ingredientsList.push(record);
+        error.innerHTML = "";
         const ingredientsHtml = ingredientsList.map((ingredient) => {
             return `<li>${ingredient.ingredient} (${ingredient.amount})</li>`;
         });
@@ -57,11 +59,12 @@
         const instructionStep = createInstructions(instructionsValue);
 
         if (!instructionsValue) {
-            console.log("podaj instrukcję");
+            error.innerHTML = "podaj instrukcję";
             return;
         }
 
         instructionsList.push(instructionStep);
+        error.innerHTML = "";
         const instructionsHtml = instructionsList.map((instructionType) => {
             return `<li>${instructionType.instructionType}</li>`;
         });
@@ -87,24 +90,60 @@
     const submitHandler = () => {
 
         if (!recipeTitle) {
-            console.log("podaj tytuł");
+            error.innerHTML = "podaj tytuł";
             return;
         }
 
         if (ingredientsList.length === 0) {
-            console.log("kuchnia nie może być pusta");
+            error.innerHTML = "kuchnia nie może być pusta";
             return;
         };
 
         if (instructionsList.length === 0) {
-            console.log("co mamy robić?");
+            error.innerHTML = "co mamy robić?";
             return;
         };
 
         const recipe = createRecipe(recipeTitle, ingredientsList, instructionsList);
+        
+        const storageCookBook = window.localStorage.getItem("cookBook");
 
-        console.log(JSON.stringify(recipe));
-    };
+        try {
+
+        const cookBook = JSON.parse(storageCookBook||"[]");
+
+        const newCookBook = [...cookBook, recipe];
+        const stringifiedNewCookBook = JSON.stringify(newCookBook);
+        
+        window.localStorage.setItem("cookBook", stringifiedNewCookBook);
+
+        error.innerHTML = "";
+        recipeTitle = "";
+        ingredientsList.length = 0;
+        instructionsList.length = 0;
+
+        newTitleContainer.innerHTML = "";
+        title.value = "";
+
+        const ingredientsHtml = ingredientsList.map((ingredient) => {
+            return `<li>${ingredient.ingredient} (${ingredient.amount})</li>`;
+        });
+        const ingredientsString = ingredientsHtml.join("");
+        ingredientsListContainer.innerHTML = `<ul>${ingredientsString}</ul>`;
+        ingredient.value = "";
+        ingredientAmount.value = "";
+
+        const instructionsHtml = instructionsList.map((instructionType) => {
+            return `<li>${instructionType.instructionType}</li>`;
+        });
+        const newInstructionsString = instructionsHtml.join("");
+        instructionsContainer.innerHTML = `<ol>${newInstructionsString}</ol>`;
+        instruction.value = "";
+
+    } catch {
+            window.localStorage.setItem("cookBook", "[]")
+        };
+ };
 
     form.addEventListener("submit", (event) => {
         event.preventDefault();
