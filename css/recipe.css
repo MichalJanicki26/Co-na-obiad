@@ -1,4 +1,11 @@
 .recipe {
-    margin: 5%;
-    text-align: center;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    gap: 25px;
+    background-color: #cd853f;
+    margin: 25px;
+    border: none;
+    border-radius: 25px;
+    padding: 25px;
 }

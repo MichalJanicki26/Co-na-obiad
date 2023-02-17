@@ -1,38 +1,39 @@
 .header {
     background-color: #cd853f;
     display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .header__logo {
+    height: 100px;
     width: 25%;
     justify-content: center;
 }
 
 .header__logo-img {
-    width: 50%;
+    Margin: 5%;
+    width: 100%;
+    max-width: 250px;
 }
 
 .header__title {
     display: flex;
-    justify-content: center;
     width: 50%;
 }
 
 .header__title--text {
-    justify-self: center;
+    margin: 0;
+    padding: 5%;
     color: #2B0000;
-    font-family: Century Gothic;
+    width: 100%;
     font-weight: 700;
     font-size: 35pt;
+    text-align: center;
 }
 
 .header__dropdown {
     position: relative;
     display: inline-block;
     width: 25%;
-    height: 100%;
 }
 
 .header__dropbtn {
@@ -41,7 +42,8 @@
 
 .header__dropbtn--img {
     justify-self: end;
-    height: 55px;
+    max-width: 55px;
+    width: 50%;
 }
 
 .header__dropdown-content {
@@ -57,7 +59,6 @@
     border-right: none;
     justify-self: center;
     color: #2B0000;
-    font-family: Century Gothic;
     font-weight: 700;
     font-size: 18pt;
 }

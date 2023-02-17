@@ -5,13 +5,12 @@
 }
 
 .main__btn {
-    font-family: Century Gothic;
     font-weight: 700;
     font-size: 22pt;
     color: #2B0000;
     background-color: peru;
     border: none;
-    border-radius: 1cm;
+    border-radius: 25px;
     padding: 25px;
     width: fit-content;
 }
@@ -25,7 +24,6 @@
 }
 
 .main__recipe {
-    font-family: Century Gothic;
     font-weight: 700;
     font-size: 18pt;
     color: #050709;
