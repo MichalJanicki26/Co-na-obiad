@@ -111,7 +111,6 @@
         try {
 
         const cookBook = JSON.parse(storageCookBook||"[]");
-
         const newCookBook = [...cookBook, recipe];
         const stringifiedNewCookBook = JSON.stringify(newCookBook);
         
