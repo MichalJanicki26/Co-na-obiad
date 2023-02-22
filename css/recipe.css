@@ -1,11 +1,25 @@
 .recipe {
+    margin: 25px;
+    padding: 25px;
+    border: none;
+    border-radius: 25px;
     display: grid;
     align-items: center;
     justify-items: center;
     gap: 25px;
+    color: #050709;
     background-color: #cd853f;
-    margin: 25px;
-    border: none;
-    border-radius: 25px;
-    padding: 25px;
-};
+    font-weight: 700;
+    font-size: 18pt;
+    text-indent: 0%;
+}
+
+.recipe__ingredientList {
+    margin-block-start: 0;
+    padding-inline-start: 0;
+}
+
+.recipe__instructions {
+    margin-block-start: 0;
+    padding-inline-start: 0;
+}

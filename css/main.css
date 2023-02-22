@@ -22,13 +22,3 @@
 .main__btn:active {
     background-color: orange;
 }
-
-.main__recipe {
-    font-weight: 700;
-    font-size: 18pt;
-    color: #050709;
-    background-color: #ff4500;
-    border-radius: 1cm;
-    padding: 25px;
-    margin-top: 50px;
-}

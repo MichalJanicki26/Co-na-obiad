@@ -21,10 +21,10 @@
         console.log(instructionType);
 
         mainContainer.innerHTML = `
-        <div class="recipe jsRecipe">
-        <div class="recipe__title">${title}</div>
-        <div class="jsRecipe__ingredientList recipe__ingredientList"><ul><li>${ingredient}(${amount})</li></ul></div>
-        <div class="jsRecipe__instructions recipe__instructions"><ul><ol>${instructionType}</ol></ul></div>
+        <div class="main__recipe recipe">
+            <div class="recipe__title">${title}</div>
+            <div><ul><li class="recipe__ingredientList">${ingredient}(${amount})</li></ul></div>
+            <div><ul><ol class="recipe__instructions">${instructionType}</ol></ul></div>
         </div>
         `;
     });
