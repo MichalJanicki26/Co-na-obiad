@@ -14,7 +14,7 @@
     text-indent: 0%;
 }
 
-.recipe__ingredientList {
+.recipe__ingredientItem {
     margin-block-start: 0;
     padding-inline-start: 0;
 }

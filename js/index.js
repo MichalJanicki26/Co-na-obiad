@@ -2,30 +2,41 @@
     const mainContainer = document.querySelector(".jsMain")
     const btn = document.querySelector(".jsBtn");
 
-    btn.addEventListener("click", () => {
-        const cookBookString = JSON.parse(window.localStorage.getItem("cookBook"));
-        recipeArray = cookBookString.slice(3);
+    const randomizeArrayValue = (array) => {
+        const arrayLength = array.length;
+        const randomIndexNumber = Math.random()*arrayLength;
+        const roundedRandomIndexNumber = Math.floor(randomIndexNumber);
+        return array[roundedRandomIndexNumber];
+    };
 
-        const [recipeObject] = recipeArray;
+    const createIngredientsList = (ingredientsArray) => {
+        const ingredientsList = ingredientsArray.map(({ingredient, amount}) => `<li class="recipe__ingredientItem">${ingredient}(${amount})</li>`).join("");
+        return `<ul>${ingredientsList}</ul>`
+    };
+
+    const createInstructionsList = (instructionsArray) => {
+        const instructionsList = instructionsArray.map(({instructionType}) => `<li class="recipe__instructions">${instructionType}</li>`).join("");
+        return `<ol>${instructionsList}</ol>`
+    };
+
+    btn.addEventListener("click", () => {
+        const cookBook = JSON.parse(window.localStorage.getItem("cookBook"));
+
+        const recipeObject = randomizeArrayValue(cookBook);
 
         const {title} = recipeObject;
 
-        const {ingredients: ingredientsArray} = recipeObject;
-        const [ingredientsObject] = ingredientsArray;
-        const {ingredient, amount} = ingredientsObject;
-
-        const {instructions: instructionsArray} = recipeObject;
-        const [instructions] = instructionsArray;
-        const {instructionType} = instructions;
-   
-        console.log(instructionType);
+        const {ingredients, instructions} = recipeObject;
 
         mainContainer.innerHTML = `
         <div class="main__recipe recipe">
             <div class="recipe__title">${title}</div>
-            <div><ul><li class="recipe__ingredientList">${ingredient}(${amount})</li></ul></div>
-            <div><ul><ol class="recipe__instructions">${instructionType}</ol></ul></div>
+
+            <div>${createIngredientsList(ingredients)}</div>
+
+            <div>${createInstructionsList(instructions)}</div>
+
         </div>
         `;
     });
-}
+};
