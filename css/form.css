@@ -2,27 +2,58 @@
     display: grid;
     align-items: center;
     justify-items: center;
-    gap: 25px;
+    gap: 15px;
+    margin: 15px;
     background-color: #cd853f;
-    margin: 25px;
-    border: none;
-    border-radius: 25px;
-    padding: 25px;
+    border-radius: 20px;
+    padding: 5px;
+    width: 75%;
 }
-
-
 
 .form__header {
     font-weight: 700;
     font-size: 22pt;
 }
 
-.form__addTitle--Btn {
-    background-color: #fff8dc;
-    border: none;
-    border-radius: 25px;
+.form__title {
+    display: grid;
+    justify-items: center;
+    width: 75%;
+    padding: 15px;
+    border-radius: 20px;
+    background-color: cornsilk;
 }
 
-.form__addTitle--Btn:hover {
-    background-color: #e9e0c8;
+.form__ingredient {
+    display: grid;
+    justify-items: center;
+    width: 75%;
+    padding: 15px;
+    border-radius: 20px;
+    background-color: cornsilk;
+    display: grid;
+    justify-content: center;
+}
+
+.form__addIngredient--Btn {
+    margin-top: 10px;
+    justify-self: center;
+    width: fit-content;
+}
+
+.form__instruction {
+    display: grid;
+    justify-items: center;
+    width: 75%;
+    padding: 15px;
+    border-radius: 20px;
+    background-color: cornsilk;
+    display: grid;
+    justify-content: center;
+}
+
+.form__addInstruction--Btn {
+    margin-top: 10px;
+    justify-self: center;
+    width: fit-content;
 }

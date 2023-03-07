@@ -95,17 +95,16 @@
         }
 
         if (ingredientsList.length === 0) {
-            error.innerHTML = "kuchnia nie może być pusta";
+            error.innerHTML = "podaj nazwę i ilość składników";
             return;
         };
 
         if (instructionsList.length === 0) {
-            error.innerHTML = "co mamy robić?";
+            error.innerHTML = "podaj instrukcje";
             return;
         };
 
         const recipe = createRecipe(recipeTitle, ingredientsList, instructionsList);
-        
         const storageCookBook = window.localStorage.getItem("cookBook");
 
         try {

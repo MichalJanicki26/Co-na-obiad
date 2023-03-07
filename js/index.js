@@ -1,5 +1,5 @@
 {
-    const mainContainer = document.querySelector(".jsMain")
+    const recipeContainer = document.querySelector(".jsRecipe")
     const btn = document.querySelector(".jsBtn");
 
     const randomizeArrayValue = (array) => {
@@ -28,14 +28,11 @@
 
         const {ingredients, instructions} = recipeObject;
 
-        mainContainer.innerHTML = `
+        recipeContainer.innerHTML = `
         <div class="main__recipe recipe">
             <div class="recipe__title">${title}</div>
-
             <div>${createIngredientsList(ingredients)}</div>
-
             <div>${createInstructionsList(instructions)}</div>
-
         </div>
         `;
     });
